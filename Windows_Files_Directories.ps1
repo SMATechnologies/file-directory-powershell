@@ -1,8 +1,8 @@
-﻿param
+param
 (
     [String]$path,
     [String]$info,
-    [String]$user,
+    [String]$name,
     [String]$login,
     [String]$option
 )
@@ -24,7 +24,7 @@ if($option -eq "checknum")
         Exit 100
     }
 }
-elseif($option -eq "new")
+elseif($option -eq "newDirectory")
 {
     # Creates a new directory in the target location
     New-Item $path -itemtype directory
@@ -68,11 +68,11 @@ elseif($option -eq "findNum")
 elseif($option -eq "createShare")
 {
     New-Item “$path" –type directory
-    New-SMBShare –Name “$user” –Path “$path” –FullAccess $login #-ChangeAccess domain\deptusers -ReadAccess “domain\authenticated users”
+    New-SMBShare –Name “$name” –Path “$path” –FullAccess $login #-ChangeAccess domain\deptusers -ReadAccess “domain\authenticated users”
 }
 elseif($option -eq "deleteShare")
 {
-    Remove-SmbShare -Name "$user" -Force
+    Remove-SmbShare -Name "$name" -Force
     Remove-Item "$path" -Confirm:$false
 }
 
