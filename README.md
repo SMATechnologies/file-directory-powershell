@@ -1,19 +1,28 @@
-# Project Name
-Project description
+# Windows file/directory management with Powershell
+This script shows several examples about how to manage files and directories on a Windows server.
+
+# Prerequisites
+* Powershell v5.1
+
+# Instructions
+* <b>Path</b> - Path to the directory or file/s
+* <b>Info</b> - Information that you want the count of: line, word, or character
+* <b>Name</b> - Name of the network share
+* <b>Login</b> - User that the network share will be shared too
+* <b>Option</b> - Option to perform: checknum, newDirectory, checkfile, findNum, createShare, deleteShare
+
+Example:
+```
+powershell.exe -ExecutionPolicy Bypass -File "C:\Windows_Files_Directories.ps1" -option createShare -path "C:\NewDir" -name "My Share" -login "testuser"
+```
 
 # Disclaimer
 No Support and No Warranty are provided by SMA Technologies for this project and related material. The use of this project's files is on your own risk.
 
 SMA Technologies assumes no liability for damage caused by the usage of any of the files offered here via this Github repository.
 
-# Prerequisites
-
-
-# Instructions
-
-
 # License
-Copyright 2019 SMA Technologies
+Copyright 2020 SMA Technologies
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
